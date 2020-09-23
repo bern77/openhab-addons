@@ -283,7 +283,7 @@ The binding provides the following properties:
 
 ```
 Bridge modbus:tcp:modbus-gateway "Modbus TCP/IP Gateway" [ host="192.168.47.11", port=502, id=180, enableDiscovery=true ] {
-    Thing helios-ventilation-easycontrols kwl "KWL"
+    Thing helios-easycontrols kwl "KWL"
 }
 ```
 
