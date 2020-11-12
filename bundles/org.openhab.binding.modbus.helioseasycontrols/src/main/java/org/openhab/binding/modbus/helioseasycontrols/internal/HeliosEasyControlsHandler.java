@@ -96,16 +96,24 @@ public class HeliosEasyControlsHandler extends BaseThingHandler {
                                                          // before reading from device
 
     private class BypassDate {
+        private final int[] MONTH_MAX_DAYS = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         // initialization to avoid issues when updating before all variables were read
         private int month = 1;
         private int day = 1;
 
         public void setMonth(int month) {
+            if (month < 1) 
+                month = 1;
+            if (month > 12)
+                month = 12;
             this.month = month;
+            setDay(this.day);
         }
 
         public void setDay(int day) {
-            this.day = day;
+            if (day < 1)
+                day = 1;
+            this.day = Math.min(day, MONTH_MAX_DAYS[month-1]);
         }
 
         public DateTimeType toDateTimeType() {
@@ -686,6 +694,7 @@ public class HeliosEasyControlsHandler extends BaseThingHandler {
     private void processResponse(HeliosVariable v, ModbusRegisterArray registers) {
         String r = ModbusBitUtilities
                 .extractStringFromRegisters(registers, 0, registers.size() * 2, StandardCharsets.US_ASCII).toString();
+        
         String[] parts = r.split("=", 2); // remove the part "vXXXX=" from the string
         // making sure we have a proper response and the response matches the requested variable
         if ((parts.length == 2) && (v.getVariableString().equals(parts[0]))) {
