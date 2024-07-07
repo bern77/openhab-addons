@@ -225,6 +225,8 @@
 			<channel id="humidityControlSetValue" typeId="humidityControlSetValue"/>
 			<channel id="humidityControlSteps" typeId="humidityControlSteps"/>
 			<channel id="humidityStopTime" typeId="humidityStopTime"/>
+			<!-- Internal Humidity Sensor -->
+			<channel id="internalSensorKwlFtfHumidity" typeId="sensorValue"/>
 			<!-- External Humidity Sensors -->
 			<channel id="externalSensorKwlFtfHumidity1" typeId="sensorValue"/>
 			<channel id="externalSensorKwlFtfHumidity2" typeId="sensorValue"/>

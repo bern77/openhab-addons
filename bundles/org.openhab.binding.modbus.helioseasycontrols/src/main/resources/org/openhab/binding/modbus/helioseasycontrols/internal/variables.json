@@ -185,5 +185,6 @@
 	"bypassFromDay":					{"group": "unitConfig",	     "variable": 2120, "access": "RW", "length": 2, "count": 5, "type": "int", "minVal": 1, "maxVal": 31},
 	"bypassFromMonth":					{"group": "unitConfig",	     "variable": 2121, "access": "RW", "length": 2, "count": 5, "type": "int", "minVal": 1, "maxVal": 12},
 	"bypassToDay":						{"group": "unitConfig",	     "variable": 2128, "access": "RW", "length": 2, "count": 5, "type": "int", "minVal": 1, "maxVal": 31},
-	"bypassToMonth":					{"group": "unitConfig",	     "variable": 2129, "access": "RW", "length": 2, "count": 5, "type": "int", "minVal": 1, "maxVal": 12}
+	"bypassToMonth":					{"group": "unitConfig",	     "variable": 2129, "access": "RW", "length": 2, "count": 5, "type": "int", "minVal": 1, "maxVal": 12},
+	"internalSensorKwlFtfHumidity":     {"group": "humidityControl", "variable": 2136, "access": "R",  "length": 4, "count": 6, "type": "int", "unit": "%", "minVal": 0, "maxVal": 9998}
 }
